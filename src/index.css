@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+
+@theme {
+  --color-main: #32ba32;
+}
+
+.content {
+  display: flex !important;
+}
+
+@layer {
+  .style-icons {
+    @apply rounded-full hover:scale-125 duration-200 text-main flex items-center justify-center;
+  }
+  .div-icons {
+    @apply w-10 h-10 bg-white rounded-full flex items-center justify-center;
+  }
+  .layer-icons {
+    @apply absolute top-0 left-0 right-0 bottom-0 group-hover:bg-black/25 duration-300 rounded-t-2xl justify-around p-4  group-hover:flex   hidden flex-col w-full;
+  }
+}
+
+.star-rating::after {
+  content: "★★★★★";
+  --rating-percent: calc(var(--rating) / 5 * 100%);
+  background: linear-gradient(
+    90deg,
+    #fbbf24 var(--rating-percent),
+    grey var(--rating-percent)
+  );
+  color: transparent;
+  background-clip: text;
+  white-space: nowrap;
+}
+
+@keyframes move {
+  0%,
+  100% {
+    left: 0;
+  }
+  50% {
+    left: calc(100% - 100px);
+  }
+}
+
+.before\:animate-move::before {
+  animation: move 4s infinite;
+}
