@@ -15,7 +15,7 @@ const NotFoundPage = () => {
           <BiArrowBack className="animate-pulse text-main/30 " size={30} />
 
           <Link
-            to={"/home"}
+            to={"/"}
             className=" text-4xl  bg-gradient-to-r   from-main via-red-500 to-main bg-clip-text text-transparent"
           >
             Back Home
